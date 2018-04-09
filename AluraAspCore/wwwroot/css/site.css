@@ -57,3 +57,23 @@
 .button.navbar-inverse.navbar-toggle:hover {
     background-color: white;
 }
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: darkcyan;
+}
+
+.left.carousel-control,
+.right.carousel-control {
+    background-image:none;
+    margin-top: 100px;
+    margin-bottom:100px
+}
+
+.carousel-indicators {
+    bottom: 10px;
+    
+}
+
+
