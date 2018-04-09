@@ -1,7 +1,63 @@
-﻿@{
-    ViewData["Title"] = "Carrinho de Compras";
+﻿
+@{
+    ViewData["Title"] = "Meu Carrinho -  Pedido";
 }
 
-<h3>Essa é a view do Carrinho de Compras.</h3>
+<h3>Meu Carrinho</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-6">
+                Item
+            </div>
+            <div class="col-md-2">
+                Pr.Unit.
+            </div>
+            <div class="col-md-2">
+                Qtd.
+            </div>
+            <div class="col-md-2">
+                <span class="pull-right">Subtotal</span>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="~/images/produtos/large_4.jpg" />
+                    </div>
+                    <div class="col-md-6">Rest</div>
+                </div>
+            </div>
+            <div class="col-md-2">29,90</div>
+            <div class="col-md-2"> 2</div>
+            <div class="col-md-2"> <span class="pull-right">59.80</span></div>
+        </div>
+    </div>
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-10 right"> Total:4 itens </div>
+            <div class="col-md-2"> 
+                <span class="pull-right">
+                    R$ 56,89
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
