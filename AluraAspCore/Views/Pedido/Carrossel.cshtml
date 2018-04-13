@@ -13,61 +13,43 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+        @{
+            var produtos = new[]{
+        new {Id = 1, Nome = "Sleep not found", Preco = 59.90 },
+        new {Id = 2, Nome = "May the code be with you", Preco = 59.90 },
+        new {Id = 3, Nome = "Rollback", Preco = 59.90 },
+        new {Id = 4, Nome = "REST", Preco = 69.90},
+        new {Id = 5, Nome = "Design Patterns com Java", Preco = 69.90 },
+        new {Id = 6, Nome = "Vire o jogo com Spring Framework", Preco = 69.90 },
+        new {Id = 7, Nome = "Test-Driven Development", Preco = 69.90 },
+        new {Id = 8, Nome = "iOS: Programe para iPhone e iPad", Preco = 69.90 },
+        new {Id = 9, Nome = "Desenvolvimento de Jogos para Android", Preco = 69.90 }
+    };
+        }
+
+
 
         <div class="item active">
 
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/produtos/large_1.jpg" class="img-responsive" />
-                        </div>
-                        <div class="panel-footer">
-                            <div>Camiseta ERROR 404 </div>
-                            <div>R$ 35,99 </div>
-                            <a asp-action="carrinho" >Adicionar</a>
-                        </div>
-                    </div>
-                </div>
+                @for (int i = 0; i < 3; i++)
+                {
 
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/produtos/large_2.jpg" class="img-responsive" />
-                        </div>
-                        <div class="panel-footer">
-                            <div>Camiseta May the code with yoy! </div>
-                            <div>R$ 35,99 </div>
-                            <a asp-action="carrinho">Adicionar</a>
+                    <div class="col-lg-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="~/images/produtos/large_@(produtos[i].Id).jpg" class="img-responsive" />
+                            </div>
+                            <div class="panel-footer">
+                                <div>@(produtos[i].Nome) </div>
+                                <div>R$ @(produtos[i].Preco) </div>
+                                <a asp-action="carrinho">Adicionar</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
 
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/produtos/large_3.jpg" class="img-responsive" />
-                        </div>
-                        <div class="panel-footer">
-                            <div>Camiseta Rollback </div>
-                            <div>R$ 35,99 </div>
-                            <a asp-action="carrinho">Adicionar</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/produtos/large_4.jpg" class="img-responsive" />
-                        </div>
-                        <div class="panel-footer">
-                            <div>Aprenda Rest  </div>
-                            <div>R$ 35,99 </div>
-                            <a asp-action="carrinho">Adicionar</a>
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -77,27 +59,61 @@
         </div>
 
         <div class="item">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <img src="~/images/produtos/large_2.jpg" />
-                </div>
-                <div class="panel-footer">
-                    <div>Camiseta May the code with yoy! </div>
-                    <div>R$ 35,99 </div>
-                </div>
+
+            <div class="row">
+                @for (int i = 4; i < 8; i++)
+                {
+
+                    <div class="col-lg-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="~/images/produtos/large_@(produtos[i].Id).jpg" class="img-responsive" />
+                            </div>
+                            <div class="panel-footer">
+                                <div>@(produtos[i].Nome) </div>
+                                <div>R$ @(produtos[i].Preco) </div>
+                                <a asp-action="carrinho">Adicionar</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+
+
             </div>
+
+
         </div>
 
         <div class="item">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <img src="~/images/produtos/large_3.jpg" />
-                </div>
-                <div class="panel-footer">
-                    <div>Camiseta Rollback </div>
-                    <div>R$ 35,99 </div>
-                </div>
+
+            <div class="row">
+                @for (int i = 8; i < 9; i++)
+                {
+
+                    <div class="col-lg-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="~/images/produtos/large_@(produtos[i].Id).jpg" class="img-responsive" />
+                            </div>
+                            <div class="panel-footer">
+                                <div>@(produtos[i].Nome) </div>
+                                <div>R$ @(produtos[i].Preco) </div>
+                                <a asp-action="carrinho">Adicionar</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+
+
             </div>
+
+
         </div>
     </div>
 
