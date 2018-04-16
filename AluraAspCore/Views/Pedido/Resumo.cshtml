@@ -3,15 +3,16 @@
     ViewData["Title"] = "Resumo do Pedido";
 }
 
+@model CarrinhoViewModel
 
 <h3>Resumo do Pedido</h3>
 
 <div class="panel panel-default">
-    
+
     <div class="panel-body">
         <div class="row">
             <div class="col-md-12">
-                <h2>Nº do pedido:12345678</h2>
+                <h2>Nº do pedido:@(new Random().Next())</h2>
             </div>
         </div>
         <hr />
@@ -28,16 +29,28 @@
             </div>
         </div>
         <hr />
+
         <div class="row">
             <div class="col-md-10">
                 <h3>Item</h3>
-                <div>REST</div>
             </div>
             <div class="col-md-2">
                 <h3>Quantidade</h3>
-                <div class="pull-right">2</div>
             </div>
         </div>
+        @foreach (var item in Model.Itens)
+    {
+
+
+        <div class="row">
+            <div class="col-md-10">
+                <div>@item.Produto.Nome</div>
+            </div>
+            <div class="col-md-2">
+                <div class="pull-right">@item.Quantidade</div>
+            </div>
+        </div>
+}
     </div>
 </div>
 
