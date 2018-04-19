@@ -38,10 +38,10 @@ namespace AluraAspCore.Controllers
         {
             var ItensCarrinho = new List<ItemPedido>()
             {
-                new ItemPedido( 1, this.produtos[0] ,1, this.produtos[0].Preco),
-                new ItemPedido( 2,this.produtos[1],2, this.produtos[1].Preco),
-                new ItemPedido( 3, this.produtos[2],1,this.produtos[2].Preco ),
-                new ItemPedido( 4, this.produtos[3],3,  this.produtos[3].Preco)
+                new ItemPedido(this.produtos[0] ,1),
+                new ItemPedido(this.produtos[1],2),
+                new ItemPedido( 3, this.produtos[2],1),
+                new ItemPedido( 4, this.produtos[3],3)
             };
 
             var CarrinhoViewModel = new CarrinhoViewModel(ItensCarrinho);

@@ -13,13 +13,25 @@ namespace AluraAspCore.Models
         public Decimal PrecoUnitario { get; private set; }
         public Decimal Subtotal { get { return Quantidade * PrecoUnitario; } }
 
-        public ItemPedido(int id, Produto produto, int quantidade, decimal precoUnitario)
+
+        public ItemPedido()
+        {
+
+        }
+        public ItemPedido(int id, Produto produto, int quantidade)
+            :this(produto,quantidade)
         {
             this.Id = id;
+            
+        }
+
+        public ItemPedido( Produto produto, int quantidade)
+        {           
             this.Produto = produto;
             this.Quantidade = quantidade;
-            this.PrecoUnitario = precoUnitario;
+            this.PrecoUnitario = produto.Preco;
         }
+
 
     }
 }
