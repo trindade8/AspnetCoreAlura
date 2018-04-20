@@ -20,6 +20,17 @@ namespace AluraAspCore
 
 
         }
+
+        public List<ItemPedido> GetItensPedido()
+        {
+            return this.contexto.ItensPedido.ToList();
+        }
+
+        public List<Produto> GetProdutos()
+        {
+            return this.contexto.Produtos.ToList();
+        }
+
         public void InicializaDB()
         {
             this.contexto.Database.EnsureCreated();

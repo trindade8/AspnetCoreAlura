@@ -3,7 +3,7 @@
 }
 <h2>@ViewData["Title"]</h2>
 
-
+@model List<Produto>
 
 
 <div id="my-carousel" class="carousel slide" data-ride="carousel">
@@ -14,23 +14,34 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
 
+        @{
+        const int TAMANHO_PAGINA = 4;
+        int NUMERO_PAGINAS = (int)Math.Ceiling((double)Model.Count() / TAMANHO_PAGINA);
+
+        }
 
 
 
-        <div class="item active">
+        @for (int pagina = 0; pagina < NUMERO_PAGINAS; pagina++)
+        {
+            var produtosPagina = this.Model.Skip(TAMANHO_PAGINA * pagina).Take(TAMANHO_PAGINA);
+
+        
+
+        <div class="item @(pagina==0 ? "active" : "")">
 
             <div class="row">
-                @for (int i = 0; i <= 3; i++)
+                @foreach ( Produto p in produtosPagina)
             {
 
                 <div class="col-lg-3">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <img src="~/images/produtos/large_@(Model[i].Id).jpg" class="img-responsive" />
+                            <img src="~/images/produtos/large_@(p.Id).jpg" class="img-responsive" />
                         </div>
                         <div class="panel-footer">
-                            <div>@(Model[i].Nome) </div>
-                            <div>R$ @(Model[i].Preco) </div>
+                            <div>@(p.Nome) </div>
+                            <div>R$ @(p.Preco) </div>
                             <a asp-action="carrinho" class="btn btn-info center-block ">Adicionar</a>
                         </div>
                     </div>
@@ -45,64 +56,9 @@
 
 
         </div>
-
-        <div class="item">
-
-            <div class="row">
-                @for (int i = 4; i < 8; i++)
-            {
-
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/produtos/large_@(Model[i].Id).jpg" class="img-responsive" />
-                        </div>
-                        <div class="panel-footer">
-                            <div>@(Model[i].Nome) </div>
-                            <div>R$ @(Model[i].Preco) </div>
-                            <a asp-action="carrinho" class="btn btn-info center-block ">Adicionar</a>
-                        </div>
-                    </div>
-                </div>
-        }
+}
 
 
-
-
-
-            </div>
-
-
-        </div>
-
-        <div class="item">
-
-            <div class="row">
-                @for (int i = 8; i < 9; i++)
-            {
-
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="~/images/produtos/large_@(Model[i].Id).jpg" class="img-responsive" />
-                        </div>
-                        <div class="panel-footer">
-                            <div>@(Model[i].Nome) </div>
-                            <div>R$ @(Model[i].Preco) </div>
-                            <a asp-action="carrinho" class="btn btn-info center-block ">Adicionar</a>
-                        </div>
-                    </div>
-                </div>
-        }
-
-
-
-
-
-            </div>
-
-
-        </div>
     </div>
 
     <!-- Controls -->
